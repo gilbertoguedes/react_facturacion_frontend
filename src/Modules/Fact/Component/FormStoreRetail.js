@@ -106,7 +106,7 @@ const FormStoreRetail = ({fac}) => {
                 <Field name="date">
                     {({ input, meta }) => (
                         <div className="container-div">
-                            <label>Fecha</label>
+                            <label>Fecha2</label>
                             <DatePicker className="container-date-picker" onChange={dt => setDate(dt)} value={date} disabled = {true}/>
                             {meta.error && meta.touched && <span>{meta.error}</span>}
                         </div>

@@ -34,6 +34,7 @@ const FormFac = (props) => {
     const [profileFac,setProfileFac] = useState('' );
     const [rediretPurchaseDone,setRediretPurchaseDone] = useState(false);
     const [rediretAuthPurchaseDone,setRediretAuthPurchaseDone] = useState(false);
+    const [capital,setCapital] = useState('' );
 
     const onSubmitFac = (values) => {
         console.log(values);
@@ -118,7 +119,7 @@ const FormFac = (props) => {
     }, []);
 
     useEffect(() => {
-        console.log(factData)
+        //console.log(factData)
     }, [factData]);
 
     const getAcount = () => {
@@ -288,7 +289,11 @@ const FormFac = (props) => {
                         {({ input, meta }) => (
                             <div className="container-div">
                                 <label>Rfc</label>
-                                <input {...input} type="text" placeholder="Rfc" />
+                                <input {...input} autoFocus value={capital} type="text" placeholder="Rfc" onChange={(event)=>{
+                                values.rfc =  event.target.value.toUpperCase();
+                                setCapital( event.target.value.toUpperCase());
+
+                            }}/>
                                 {meta.error && meta.touched && <span>{meta.error}</span>}
                             </div>
                         )}

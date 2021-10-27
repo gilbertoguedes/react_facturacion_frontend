@@ -260,7 +260,7 @@ const FormLoguin = ({handleShowFac}) => {
                     <Field name="names">
                         {({ input, meta }) => (
                             <div className="container-div xl:w-1/2 lg:w-1/2 md:w-1/2 sm:w-full xs-w-full">
-                                <label>Facturar a: (Nombre o Razón Social)</label>
+                                <label>3Facturar a: (Nombre o Razón Social)</label>
                                 <input {...input} type="text" placeholder="Facturar a" />
                                 {meta.error && meta.touched && <span>{meta.error}</span>}
                             </div>

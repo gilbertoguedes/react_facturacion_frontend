@@ -162,7 +162,7 @@ const FormFac = (props) => {
                 <Field name="names">
                     {({ input, meta }) => (
                         <div className="container-div">
-                            <label>Facturar a: (Nombre o Razón Social)</label>
+                            <label>6Facturar a: (Nombre o Razón Social)</label>
                             <input {...input} type="text" placeholder="Facturar a" />
                             {meta.error && meta.touched && <span>{meta.error}</span>}
                         </div>

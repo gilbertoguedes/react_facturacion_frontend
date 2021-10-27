@@ -118,8 +118,8 @@ const FormStoreRetail = ({fac}) => {
                     {({ input, meta }) => (
                         <div className="container-div">
                             <label>Fecha</label>
-                            {/*<DatePicker className="container-date-picker" onChange={dt => setDate(dt)} value={date} disabled = {true}/>*/}
-                            <DatePicker className="container-date-picker" onChange={dt => setDate(dt)} value={date} />
+                            {<DatePicker className="container-date-picker" onChange={dt => setDate(dt)} value={date} disabled = {true}/>}
+
                             {meta.error && meta.touched && <span>{meta.error}</span>}
                         </div>
                     )}

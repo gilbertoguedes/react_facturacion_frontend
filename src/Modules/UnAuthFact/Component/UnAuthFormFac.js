@@ -23,7 +23,7 @@ const FormFac = (props) => {
     const [factData,setFactData] = useState({names:'', rfc:''} );
 
     const [cfdi,setCfdi] = useState('' );
-
+    const [capital,setCapital] = useState('' );
     const [rediretPurchaseDone,setRediretPurchaseDone] = useState(false);
 
     const onSubmitFac = (state) => {
@@ -34,8 +34,9 @@ const FormFac = (props) => {
         getAcount();
     }, []);
 
+
     useEffect(() => {
-        console.log(factData)
+       // console.log(factData)
     }, [factData]);
 
     const getAcount = () => {
@@ -48,6 +49,7 @@ const FormFac = (props) => {
 
             });
     }
+
 
     const onSubmitSearch = (values) => {
         //handleShowFac(state);
@@ -96,7 +98,6 @@ const FormFac = (props) => {
             ...input,
 
             onChange: e => {
-
                 input.onChange(e);
 
                 inputOnChange && inputOnChange(e);
@@ -137,6 +138,7 @@ const FormFac = (props) => {
         onSubmit={values=>onSubmitSearch(values)}
         validate={values => {
             const errors = {}
+            console.log(values);
             if (!values.names) {
                 errors.names = 'Campo requerido'
             }
@@ -174,7 +176,15 @@ const FormFac = (props) => {
                     {({ input, meta }) => (
                         <div className="container-div">
                             <label>Rfc</label>
-                            <input {...input} type="text" placeholder="Rfc" />
+                            <input {...input} value={capital} type="text" placeholder="Rfc"  onChange={(event)=>{
+                   // setCapital({value: event.target.value});
+                   //  event.preventDefault();
+                   //  this.value = this.value.toUpperCase();
+                    // console.log(event.target.value)
+                    values.rfc =  event.target.value.toUpperCase();
+                    setCapital( event.target.value.toUpperCase());
+
+                }}/>
                             {meta.error && meta.touched && <span>{meta.error}</span>}
                         </div>
                     )}
